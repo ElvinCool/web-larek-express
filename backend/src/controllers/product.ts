@@ -28,7 +28,9 @@ export const updateProduct = (req: Request, res: Response, next: NextFunction) =
   const { productId } = req.params;
   Product.findByIdAndUpdate(
     productId,
-    { title, category, description, price, image },
+    {
+      title, category, description, price, image,
+    },
     { new: true },
   )
     .then((product) => {

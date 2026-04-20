@@ -9,7 +9,9 @@ interface IUser extends Document {
 }
 
 const userSchema = new Schema({
-  name: { type: String, minlength: 2, maxlength: 30, default: 'Ё-мое' },
+  name: {
+    type: String, minlength: 2, maxlength: 30, default: 'Ё-мое',
+  },
   email: {
     type: String,
     required: true,
@@ -19,7 +21,9 @@ const userSchema = new Schema({
       message: 'Некорректный email',
     },
   },
-  password: { type: String, required: true, minlength: 6, select: false },
+  password: {
+    type: String, required: true, minlength: 6, select: false,
+  },
   tokens: { type: [{ token: { type: String } }], select: false },
 });
 
