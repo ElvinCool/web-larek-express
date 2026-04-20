@@ -22,7 +22,7 @@ const userSchema = new Schema({
     },
   },
   password: {
-    type: String, required: true, minlength: 6, select: false,
+    type: String, required: true, select: false,
   },
   tokens: { type: [{ token: { type: String } }], select: false },
 });

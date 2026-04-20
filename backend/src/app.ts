@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import { errors } from 'celebrate';
 import cookieParser from 'cookie-parser';
 import path from 'path';
-import { DB_ADDRESS } from './config';
+import { DB_ADDRESS, PORT } from './config';
 import productRouter from './routes/product';
 import orderRouter from './routes/order';
 import errorHandler from './middlewares/error-handler';
@@ -12,8 +12,6 @@ import NotFoundError from './errors/not-found';
 import { requestLogger, errorLogger } from './middlewares/logger';
 import authRouter from './routes/auth';
 import uploadRouter from './routes/upload';
-
-const { PORT = 3000 } = process.env;
 
 const app = express();
 
